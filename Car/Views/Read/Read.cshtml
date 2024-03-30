@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .car-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #007bff; /* Blue border */
+            border-radius: 5px;
+            background-color: #f1f1f1; /* Light gray background */
+        }
+
+        .car-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff; /* Blue color */
+            margin-bottom: 10px;
+        }
+
+        .body-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .body-item {
+            font-size: 18px;
+            color: #28a745; /* Green color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Cars Page</h1>
+        @foreach (var car in Model)
+        {
+            <div class="car-container">
+                <h2 class="car-name">@car.CarName</h2>
+                <ul class="body-list">
+                    @foreach (var carBody in car.CarBodies)
+                    {
+                        <li class="body-item">@carBody.Body.BodyName</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</body>
+</html>
